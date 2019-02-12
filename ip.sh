@@ -7,7 +7,7 @@ elif [ $# -gt 3 ]; then
   echo 1>&2 "$0: too many arguments"
   exit 2
 fi
-x
+
 # read IP into array
 IFS='.' read -ra ADDR <<< "$1"
 
