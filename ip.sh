@@ -20,7 +20,10 @@ for i in $(seq $2 $3);
 		position=$(( $j + 1 ))
 
 		# if ip section contains i, print out outer loop index
-		if [[ ${ADDR[$j]} == *"i"* ]]; then
+		if [[ ${ADDR[$j]} == *"i"* ]] && [[ $position == $(( ${#ADDR[*]} )) ]]; then
+    		echo -ne "$i"
+
+		elif [[ ${ADDR[$j]} == *"i"* ]] && [[ $position != $(( ${#ADDR[*]} )) ]]; then
     		echo -ne "$i."
 
 	    # last element doesn't need a .
